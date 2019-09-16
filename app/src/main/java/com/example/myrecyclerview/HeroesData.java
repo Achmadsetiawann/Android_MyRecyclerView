@@ -1,6 +1,9 @@
 package com.example.myrecyclerview;
 import java.util.ArrayList;
 
+    /*
+    Description : Function Store Data pada local store
+    */
 public class HeroesData {
     public static String[][] data = new String[][]{
             {"Ahmad Dahlan", "Salah seorang ulama dan khatib terkemuka di Masjid Besar Kasultanan Yogyakarta pada masa itu, dan ibu dari K.H. Ahmad Dahlan adalah puteri dari H. Ibrahim yang juga menjabat penghulu Kesultanan Ngayogyakarta Hadiningrat pada masa itu. KH. Ahmad Dahlan telah mempelopori kebangkitan ummat Islam untuk menyadari nasibnya sebagai bangsa terjajah yang masih harus belajar dan berbuat.", "https://upload.wikimedia.org/wikipedia/commons/8/87/Ahmad_Dahlan.jpg"},
@@ -15,6 +18,10 @@ public class HeroesData {
             {"Tan Malaka", "Tan Malaka atau Ibrahim gelar Datuk Sutan Malaka (lahir di Nagari Pandam Gadang, Suliki, Lima Puluh Kota, Sumatera Barat, 2 Juni 1897 – meninggal di Desa Selopanggung, Kediri, Jawa Timur, 21 Februari 1949 pada umur 51 tahun) adalah seorang pembela kemerdekaan Indonesia, tokoh Partai Komunis Indonesia, juga pendiri Partai Murba, dan merupakan salah satu Pahlawan Nasional Indonesia.", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/TanMalaka_DariPendjara_ed3.jpg/330px-TanMalaka_DariPendjara_ed3.jpg"},
     };
 
+
+    /*
+    Description : Function View pada Array dengan menggunakan function for
+    */
     public static ArrayList<Hero> getListData() {
         ArrayList<Hero> list = new ArrayList<>();
         for (String[] aData : data) {

@@ -16,7 +16,9 @@ import java.util.ArrayList;
 
 public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListViewHolder> {
 
-
+    /*
+    Description : ArrayList Hero
+    */
     private ArrayList<Hero> listHero;
 
     public ListHeroAdapter(ArrayList<Hero> list) {
@@ -31,6 +33,9 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
         return new ListViewHolder(view);
     }
 
+    /*
+    Description : Function Show/Blind View dengan menggunakan Glide
+    */
     @Override
     public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
         Hero hero = listHero.get(position);
@@ -49,7 +54,10 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
         return listHero.size();
     }
 
-    class ListViewHolder extends RecyclerView.ViewHolder {
+    /*
+    Description : Function View dengan findViewById ada Layout item_row_hero.xml
+    */
+    public class ListViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imgPhoto;
         TextView tvName, tvFrom;
