@@ -48,6 +48,7 @@ public class CardViewHeroAdapter extends RecyclerView.Adapter<CardViewHeroAdapte
                 .into(holder.imgPhoto);
         holder.tvName.setText(hero.getName());
         holder.tvFrom.setText(hero.getFrom());
+
         holder.btnFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,6 +56,7 @@ public class CardViewHeroAdapter extends RecyclerView.Adapter<CardViewHeroAdapte
                         listHero.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
             }
         });
+
         holder.btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,8 +64,18 @@ public class CardViewHeroAdapter extends RecyclerView.Adapter<CardViewHeroAdapte
                         listHero.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
             }
         });
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(holder.itemView.getContext(), "Kamu Memilih " + listHero.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
+    /*
+    Description : Function View Array sesuai dengan list yang ada pada HeroesData.java
+    */
     @Override
     public int getItemCount() {
         return listHero.size();

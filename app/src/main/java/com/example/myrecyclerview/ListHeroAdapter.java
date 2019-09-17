@@ -17,15 +17,23 @@ import java.util.ArrayList;
 public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListViewHolder> {
 
     /*
-    Description : ArrayList Hero
+    Description : Function ArrayList Hero & Clicked CardView
     */
     private ArrayList<Hero> listHero;
+    private OnItemClickCallback onItemClickCallback;
+
+    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback;
+    }
+
 
     public ListHeroAdapter(ArrayList<Hero> list) {
         this.listHero = list;
     }
 
-
+    /*
+    Description : LifeCycle Method dengan menggunakan function Create
+    */
     @NonNull
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
@@ -47,8 +55,18 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
 
         holder.tvName.setText(hero.getName());
         holder.tvFrom.setText(hero.getFrom());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickCallback.onItemClicked(listHero.get(holder.getAdapterPosition()));
+            }
+        });
     }
 
+    /*
+    Description : Function View Array sesuai dengan list yang ada pada HeroesData.java
+    */
     @Override
     public int getItemCount() {
         return listHero.size();
@@ -68,6 +86,13 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
         tvName = itemView.findViewById(R.id.tv_item_name);
         tvFrom = itemView.findViewById(R.id.tv_item_from);
         }
+    }
+
+    /*
+    Description : Function OnItemClickCallback
+    */
+    public interface OnItemClickCallback {
+        void onItemClicked(Hero data);
     }
 
 
