@@ -2,7 +2,7 @@
 <br>
 
 <div align ="center">
-<img src="https://github.com/Achmadsetiawann/Android_MyRecyclerView/blob/master/proof.gif" width="200" height="300">
+<img src="https://github.com/Achmadsetiawann/Android_MyActionBar/blob/master/Proof.gif" width="200" height="300">
 </div>
 
 <br>
